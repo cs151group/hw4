@@ -3,6 +3,8 @@ import java.awt.Shape;
 import java.awt.Stroke;
 
 public class ClockHand implements MoveableShape, Stroke {
+	
+	//TODO: Add a timer
 
 	@Override
 	public Shape createStrokedShape(Shape p) {
