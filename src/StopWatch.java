@@ -1,9 +1,22 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class StopWatch {
+public class StopWatch extends JLayeredPane{
 
-//    StopWatchDial dial1 = new StopWatchDial();
-//    StopWatchDial dial2 = new StopWatchDial();
-    //TODO: figure out dial sizes
+	private StopWatchDial outer;
+	private StopWatchDial inner;
+	private int x;
+	private int y;
+	private int width;
+
+	private static final double INNER_RATIO = 0.33;
+	private static final double INNER_Y_OFFSET_RATIO = 0.1;
+
+	public StopWatch (int x, int y, int width) {
+		this.x = x;
+		this.y = y;
+		this.width = width;
+		outer = new StopWatchDial(x, y, width);
+		//TODO: figure out ratios for inner dial
+	}
 }
