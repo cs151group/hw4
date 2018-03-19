@@ -5,7 +5,12 @@ import javax.swing.JComponent;
 
 public class ClockHand extends JComponent implements MoveableShape, Stroke {
 	
-	//TODO: Add instance variables
+	private int length; //should this be an int or a float? change if necessary
+	private int x;
+	private int y;
+	private float width;
+	private Color color;
+	private float angle;
 
 	/**
 	 * Creates a ClockHand with length l, center (x, y), a width,
