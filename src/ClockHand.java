@@ -6,8 +6,8 @@ import javax.swing.JComponent;
 public class ClockHand extends JComponent implements MoveableShape, Stroke {
 	
 	private int length; //should this be an int or a float? change if necessary
-	private int x;
-	private int y;
+	private int centerX;
+	private int centerY;
 	private float width;
 	private Color color;
 	private float angle;
@@ -16,12 +16,12 @@ public class ClockHand extends JComponent implements MoveableShape, Stroke {
 	 * Creates a ClockHand with length l, center (x, y), a width,
 	 * and a Color. Starts the ClockHand in the 12 o'clock position.
 	 * @param length The length of the line
-	 * @param x the x position of the center
-	 * @param y the y position of the center
+	 * @param centerX the x position of the center
+	 * @param centerY the y position of the center
 	 * @param width the width of the line
 	 * @param color the color of the line
 	 */
-	public ClockHand(int length, int x, int y,
+	public ClockHand(int length, int centerX, int centerY,
 						float width, Color color) {
 		// TODO Auto-generated constructor stub
 	}
