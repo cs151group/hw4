@@ -20,6 +20,18 @@ public class ClockHand extends JComponent implements MoveableShape, Stroke {
 						float width, Color color) {
 		// TODO Auto-generated constructor stub
 	}
+	
+	/**
+	 * Creates a ClockHand with length l and center (x, y). Width and color are set
+	 * to default values. Starts the ClockHand in the 12 o'clock position.
+	 * 
+	 * @param length
+	 * @param x
+	 * @param y
+	 */
+	public ClockHand(int length, int x, int y) {
+		// TODO Auto-generated constructor stub
+	}
 
 	@Override
 	public Shape createStrokedShape(Shape p) {
