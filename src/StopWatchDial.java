@@ -22,4 +22,6 @@ public class StopWatchDial extends JLayeredPane{
 		this.add(face, 1);
 		this.add(hand, 2);
 	}
+	
+	
 }
