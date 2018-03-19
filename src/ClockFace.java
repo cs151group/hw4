@@ -24,7 +24,7 @@ public class ClockFace extends JPanel
       this.width = width;
       this.setOpaque(false);
       this.setPreferredSize(new Dimension(width, width));
-	  ClockHand clockHandHours = new ClockHand();
+      // TODO	  ClockHand clockHandHours = new ClockHand();
    }
 
    public void translate(int dx, int dy)

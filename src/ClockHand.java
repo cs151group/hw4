@@ -5,6 +5,20 @@ public class ClockHand implements MoveableShape, Stroke {
 	
 	//TODO: Add a timer
 
+	/**
+	 * Creates a ClockHand with length l, center (x, y), a width,
+	 * and a Color. Starts the ClockHand in the 12 o'clock position.
+	 * @param length The length of the line
+	 * @param x the x position of the center
+	 * @param y the y position of the center
+	 * @param width the width of the line
+	 * @param color the color of the line
+	 */
+	public ClockHand(int length, int x, int y,
+						float width, Color color) {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public Shape createStrokedShape(Shape p) {
 		// TODO Auto-generated method stub
@@ -16,13 +30,23 @@ public class ClockHand implements MoveableShape, Stroke {
 		// TODO Auto-generated method stub
 
 	}
-
+	
 	@Override
 	public void translate(int dx, int dy) {
 		// TODO Auto-generated method stub
 		//x += dx;
         //y += dy;
 
+	}
+	
+	/**
+	 * Sets the angle of the circle.
+	 * @param radians the angle of the circle
+	 */
+	// Should angles be counted clockwise or counterclockwise?
+	// Angles should probably start from the 12 o'clock position.
+	public void setAngle(double radians){
+		
 	}
 
 	
