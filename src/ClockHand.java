@@ -1,9 +1,11 @@
 import java.awt.*;
 import java.awt.geom.Line2D;
 
-public class ClockHand implements MoveableShape, Stroke {
+import javax.swing.JComponent;
+
+public class ClockHand extends JComponent implements MoveableShape, Stroke {
 	
-	//TODO: Add a timer
+	//TODO: Add instance variables
 
 	/**
 	 * Creates a ClockHand with length l, center (x, y), a width,

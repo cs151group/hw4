@@ -11,6 +11,9 @@ public class ClockFace extends JPanel
 	//This array have the 12 number that clock face need
 	private int arrayTime[] = new int[12]; 
 	
+	//TODO: Add instance variables. 
+	// All variables from constructor, AND a float angle variable
+	
    /**
       Constructs a Clock
       @param x the left of the bounding rectangle
