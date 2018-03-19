@@ -1,3 +1,6 @@
+import javax.swing.*;
+import java.awt.*;
+
 public class StopWatch {
 
     StopWatchDial dial1 = new StopWatchDial();

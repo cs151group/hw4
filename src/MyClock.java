@@ -1,3 +1,6 @@
+import javax.swing.*;
+import java.awt.*;
+
 public class MyClock {
 	
 	//TODO: Should have 3 ClockHands, for hours, seconds minutes.
