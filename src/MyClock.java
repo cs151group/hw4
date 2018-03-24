@@ -40,6 +40,13 @@ public class MyClock extends JLayeredPane {
 	
 	private void updateHands() {
 		zdt = ZonedDateTime.now();
+		int second = zdt.getSecond();
+		double secondAngle = (double)(second / 60) * 2 * Math.PI;
+		seconds.setAngle(secondAngle);
+		seconds.repaint();
+		
+		int minute = zdt.getMinute();
+		int hour = zdt.getHour();
 	}
 	
 	private static final double SEC_RATIO = 0.85;
