@@ -64,7 +64,7 @@ public class ClockHand extends JComponent implements MoveableShape {
       g2.draw(shape);
 
 	}
-	
+
 	@Override
 	public void translate(int dx, int dy) {
 		// TODO Auto-generated method stub
