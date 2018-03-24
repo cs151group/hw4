@@ -25,4 +25,9 @@ public class StopWatchDial extends JLayeredPane{
 		this.setPreferredSize(new Dimension(width, width));
 		repaint();
 	}
+
+	public void updateHand(int position){
+		double theta = ((double)position / 60) * 2 * Math.PI;
+		hand.setAngle(theta);
+	}
 }
