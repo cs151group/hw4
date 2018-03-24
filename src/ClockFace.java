@@ -8,8 +8,6 @@ import java.util.*;
 */
 public class ClockFace extends JPanel
 {
-	//This array have the 12 number that clock face need
-	private int arrayTime[] = new int[12]; 
 	
    /**
       Constructs a Clock
@@ -24,7 +22,7 @@ public class ClockFace extends JPanel
       this.width = width;
       this.setOpaque(false);
       this.setPreferredSize(new Dimension(width, width));
-	  ClockHand clockHandHours = new ClockHand();
+	  
    }
 
    public void translate(int dx, int dy)
