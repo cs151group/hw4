@@ -38,7 +38,7 @@ public class ClockTester
 		JButton stopwatchButton = new JButton ("Stopwatch");
 		JButton stopButton = new JButton ("Stop");
 		JButton startButton = new JButton ("Start");
-		
+	
 		lowNav.add(startButton);
 		lowNav.add(stopButton);
 		
