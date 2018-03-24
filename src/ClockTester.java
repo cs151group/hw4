@@ -1,4 +1,4 @@
-import java.awt.*; //Wow what a cool comment
+import java.awt.*;  //Mocha for Micah
 import javax.swing.*;
 
 /**
@@ -37,8 +37,10 @@ public class ClockTester
 		JButton stopwatchButton = new JButton ("Stopwatch");
 		JButton stopButton = new JButton ("Stop");
 		JButton startButton = new JButton ("Start");
+
 		JButton resetButton = new JButton ("Reset");
 		
+
 		lowNav.add(startButton);
 		lowNav.add(stopButton);
 		lowNav.add(resetButton);
