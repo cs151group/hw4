@@ -1,17 +1,16 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
+import java.util.Date;
 
 public class MyClock extends JLayeredPane {
 
-	// TODO: Should have 3 ClockHands, for hours, seconds minutes.
-	// TODO: Should have 1 ClockFace.
-	// private ClockHand hours;
-	// private ClockHand mins;
-	// private ClockHand secs;
-	// private ClockFace face;
-
 	private ClockFace clockface;
 	private ClockHand seconds;
+	private ClockHand hours;
+	private ClockHand mins;
+	private Date d;
+	private Timer t;
 
 	public MyClock(int x, int y, int width) {
 		clockface = new ClockFace(x, y, width);
@@ -28,6 +27,16 @@ public class MyClock extends JLayeredPane {
 		seconds.repaint();
 		this.setOpaque(true);
 		this.setPreferredSize(new Dimension(width, width));
+		
+		//Setting up action listener
+		ActionListener listener = event -> updateHands();
+		t = new Timer(DELAY, listener);
 	}
+	
+	private void updateHands() {
+		
+	}
+	
 	private static final double SEC_RATIO = 0.85;
+	private static final int DELAY = 1000;
 }
