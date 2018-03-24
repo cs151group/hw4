@@ -1,4 +1,4 @@
-import java.awt.*;
+import java.awt.*;  //Mocha for Micah
 import javax.swing.*;
 
 /**
@@ -31,7 +31,6 @@ public class ClockTester
 		frame.remove(stopwatch);
 		frame.remove(lowNav);
 		frame.add(clock, BorderLayout.CENTER);
-		clock.repaint();
 		frame.pack();
 	  });
 		
@@ -48,9 +47,8 @@ public class ClockTester
 			frame.remove(clock);
 			frame.pack();
 			frame.add(stopwatch, BorderLayout.CENTER);
-			stopwatch.repaint();
 			frame.add(lowNav, BorderLayout.PAGE_END);
-	    
+			frame.pack();
 	  });
 
 	  stopButton.addActionListener(event -> {
