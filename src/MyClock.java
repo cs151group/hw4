@@ -55,14 +55,21 @@ public class MyClock extends JLayeredPane {
 	}
 	
 	private void updateHands() {
+		//Getting current time
 		zdt = ZonedDateTime.now();
+		
 		int second = zdt.getSecond();
 		double secondAngle = (double)(second / 60) * 2 * Math.PI;
 		seconds.setAngle(secondAngle);
 		seconds.repaint();
 		
 		int minute = zdt.getMinute();
+		double minuteAngle = (double)(minute / 60) * 2 * Math.PI;
+		mins.setAngle(minuteAngle);
+		
 		int hour = zdt.getHour();
+		double hourAngle = (double)(hour / 12) * 2 * Math.PI;
+		hours.setAngle(hourAngle);
 	}
 	
 	private static final double SEC_RATIO = 0.85;
