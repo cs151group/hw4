@@ -69,6 +69,8 @@ public class StopWatch extends JLayeredPane{
 		// TODO Fix reset
 		t.restart();
 		t.stop();
+		outerDial.updateHand(0);
+		outerDial.updateHand(0);
 	}
 	private static final double SEC_RATIO = 0.85;
 	private static final int DELAY = 1000;
