@@ -22,11 +22,27 @@ public class MyClock extends JLayeredPane {
 				(y + width)/2, 
 				2.0f, 
 				Color.RED );
+		hours = new ClockHand(
+				(int)((width / 2) * HOUR_RATIO),
+				(x + width)/2,
+				(y + width)/2,
+				9.0f,
+				Color.BLACK);
+		mins = new ClockHand(
+				(int)((width / 2) * MINUTE_RATIO),
+				(x + width)/2,
+				(y + width)/2,
+				5.0f,
+				Color.BLACK);
 		this.setLayout(new OverlayLayout(this));
 		this.add(clockface, JLayeredPane.DEFAULT_LAYER);
 		this.add(seconds, new Integer(2));
+		this.add(hours, new Integer(2));
+		this.add(mins, new Integer(3));
 		clockface.repaint();
 		seconds.repaint();
+		mins.repaint();
+		hours.repaint();
 		this.setOpaque(true);
 		this.setPreferredSize(new Dimension(width, width));
 		
@@ -43,5 +59,7 @@ public class MyClock extends JLayeredPane {
 	}
 	
 	private static final double SEC_RATIO = 0.85;
+	private static final double MINUTE_RATIO = 0.90;
+	private static final double HOUR_RATIO = 0.75;
 	private static final int DELAY = 1000;
 }
