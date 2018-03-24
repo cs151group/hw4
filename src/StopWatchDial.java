@@ -20,7 +20,7 @@ public class StopWatchDial extends JLayeredPane {
         face = new ClockFace(x, y, width);
         int cX = x + width / 2;
         int cY = y + width / 2;
-        hand = new ClockHand((int) ((width / 2) * HAND_LENGTH), cX, cY, 2.0f, Color.BLACK);
+        hand = new ClockHand((int) ((width / 2) * HAND_LENGTH), cX, cY, 2.0f, Color.RED);
         this.add(face, new Integer(1));
         this.add(hand, new Integer(2));
         this.setPreferredSize(new Dimension(width, width));
