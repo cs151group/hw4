@@ -10,9 +10,13 @@ public class ClockTester
    public static void main(String[] args)
    {
       JFrame frame = new JFrame();
-
+      //TODO: Modify ClockTester to work with MyClock and Stopwatch. 
       
+
+      MyClock icon = new MyClock(0, 0, CLOCK_RADIUS);
+
       ClockFace face = new ClockFace(0, 0, CLOCK_RADIUS);
+
       
       frame.setLayout(new BorderLayout());
       frame.add(face, BorderLayout.CENTER);

@@ -23,12 +23,7 @@ public class ClockHand extends JComponent implements MoveableShape, Stroke {
 	 */
 	public ClockHand(int length, int centerX, int centerY,
 						float width, Color color) {
-		// XTODO Auto-generated constructor stub
-		this.length = length;
-		this.centerX = centerX;
-		this.centerY = centerY;
-		this.width = width;
-		this.color = color;
+		// TODO Auto-generated constructor stub
 	}
 	
 	/**
@@ -49,14 +44,18 @@ public class ClockHand extends JComponent implements MoveableShape, Stroke {
 	@Override
 	public Shape createStrokedShape(Shape p) {
 		// TODO Auto-generated method stub
-
 		return null;
 	}
 
 	@Override
 	public void draw(Graphics2D g2) {
 		// TODO Auto-generated method stub
-		g2.drawLine(this.centerX, this.centerY, (this.centerX*2), (this.centerY*2));
+	  Line2D shape = new Line2D.Double();
+      shape.setLine(250, 20, 250, 250);
+  //    Graphics2D g2 = (Graphics2D) g;
+	  g2.setColor(Color.BLACK);
+      g2.draw(shape);
+
 	}
 	
 	@Override
