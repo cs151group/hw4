@@ -41,7 +41,7 @@ public class StopWatch extends JLayeredPane{
 		ActionListener listener = event -> {
 			currentTime = System.currentTimeMillis();
 			elapsedTime = currentTime - startTime;
-			secDial.updateHand(elapsedTime);
+			secDial.updateHand((int)elapsedTime);
 		};
 		t = new Timer(DELAY, listener);
 		t.start();
