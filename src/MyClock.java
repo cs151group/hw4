@@ -36,7 +36,7 @@ public class MyClock extends JLayeredPane {
 				Color.BLACK);
 		this.setLayout(new OverlayLayout(this));
 		this.add(clockface, JLayeredPane.DEFAULT_LAYER);
-		this.add(seconds, new Integer(2));
+		this.add(seconds, new Integer(1));
 		this.add(hours, new Integer(2));
 		this.add(mins, new Integer(3));
 		clockface.repaint();
@@ -73,7 +73,7 @@ public class MyClock extends JLayeredPane {
 	}
 	
 	private static final double SEC_RATIO = 0.85;
-	private static final double MINUTE_RATIO = 0.90;
+	private static final double MINUTE_RATIO = 0.80;
 	private static final double HOUR_RATIO = 0.75;
 	private static final int DELAY = 1000;
 }

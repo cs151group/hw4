@@ -11,6 +11,8 @@ public class ClockHand extends JComponent implements MoveableShape {
 	private float width;
 	private Color color;
 	private float angle;
+	private double endPointX;
+	private double endPointY;
 
 	/**
 	 * Creates a ClockHand with length l, center (x, y), a width,
@@ -31,6 +33,8 @@ public class ClockHand extends JComponent implements MoveableShape {
 		this.color = color;
 		this.setOpaque(false);
 		this.setPreferredSize(new Dimension(length * 2, length * 2));
+		this.endPointX = centerX;
+		this.endPointY = centerY - length;
 	}
 
 	
@@ -74,7 +78,7 @@ public class ClockHand extends JComponent implements MoveableShape {
 		Graphics2D g2 = (Graphics2D) g;
 		super.paintComponent(g2);
 		Line2D line = new Line2D.Double();
-		line.setLine(centerX, centerY, centerX, centerY + -length);
+		line.setLine(centerX, centerY, endPointX, endPointY);
 		g2.setColor(color);
 		g2.setStroke(new BasicStroke(width));
 		g2.draw(line);
@@ -82,24 +86,13 @@ public class ClockHand extends JComponent implements MoveableShape {
 	
 	/**
 	 * Sets the angle of the circle.
+	 * All angles are relative to North (+y) being 0, 2pi
 	 * @param radians the angle of the circle
 	 */
-	// Should angles be counted clockwise or counterclockwise?
-	// Angles should probably start from the 12 o'clock position.
-	public void setAngle(double radians){
-		
+	public void setAngle(double radians) {
+		endPointX = (length * (Math.sin(radians))) + centerX;
+		endPointY = (centerY - (length * Math.cos(radians)));
+		this.repaint();
 	}
 
-	/*
-	//I think this is how we draw, I pick 250 as the x1, x2, y2 
-	//because I the circe is 500 but I don't know if that is radius or diameter
-    //@Override
-    public void paint(Graphics g) {
-      Line2D shape = new Line2D.Double();
-      shape.setLine(250, 20, 250, 250);  
-      Graphics2D g2 = (Graphics2D) g; 
-	  g2.setColor(Color.BLACK);
-      g2.draw(shape);
-   }
-   */
 }
