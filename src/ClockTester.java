@@ -1,5 +1,4 @@
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
 
 /**
@@ -13,16 +12,20 @@ public class ClockTester
       JFrame frame = new JFrame();
       //TODO: Modify ClockTester to work with MyClock and Stopwatch. 
       
+
       MyClock icon = new MyClock(0, 0, CLOCK_RADIUS);
+
+      ClockFace face = new ClockFace(0, 0, CLOCK_RADIUS);
+
       
       frame.setLayout(new BorderLayout());
-      frame.add(icon, BorderLayout.CENTER);
+      frame.add(face, BorderLayout.CENTER);
       
       JPanel topNav = new JPanel(new FlowLayout());
       topNav.add(new JButton("clock"));
       topNav.add(new JButton("stopwatch"));
       frame.add(topNav, BorderLayout.NORTH);
-      icon.repaint();
+      face.repaint();
 
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       frame.pack();

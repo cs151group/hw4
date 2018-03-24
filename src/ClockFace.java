@@ -22,7 +22,7 @@ public class ClockFace extends JPanel
       this.width = width;
       this.setOpaque(false);
       this.setPreferredSize(new Dimension(width, width));
-	  
+
    }
 
    public void translate(int dx, int dy)
