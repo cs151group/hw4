@@ -18,6 +18,10 @@ public class StopWatch extends JLayeredPane{
 		this.width = width;
 		outer = new StopWatchDial(x, y, width);
 		//TODO: figure out ratios for inner dial
+		this.setLayout(new OverlayLayout(this));
+		this.setPreferredSize(new Dimension(width, width));
+		this.add(outer, new Integer(1));
+		repaint();
 	}
 	
 	/**
