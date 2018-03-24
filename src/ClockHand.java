@@ -3,7 +3,7 @@ import java.awt.geom.Line2D;
 
 import javax.swing.JComponent;
 
-public class ClockHand extends JComponent implements MoveableShape, Stroke {
+public class ClockHand extends JComponent implements MoveableShape {
 	
 	private int length; //should this be an int or a float? change if necessary
 	private int centerX;
@@ -43,18 +43,13 @@ public class ClockHand extends JComponent implements MoveableShape, Stroke {
 	}
 
 	@Override
-	public Shape createStrokedShape(Shape p) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public void draw(Graphics2D g2) {
 		// TODO Auto-generated method stub
 	  Line2D shape = new Line2D.Double();
       shape.setLine(250, 20, 250, 250);
   //    Graphics2D g2 = (Graphics2D) g;
 	  g2.setColor(Color.BLACK);
+	  g2.setStroke(new BasicStroke(width));
       g2.draw(shape);
 
 	}
