@@ -13,6 +13,7 @@ public class StopWatch extends JLayeredPane{
 	private long startTime;
 	private long currentTime;
 	private long elapsedTime;
+	private long offset = 0;
 
 	private static final double INNER_RATIO = 0.33;
 	private static final double INNER_Y_OFFSET_RATIO = 0.1;
@@ -33,6 +34,7 @@ public class StopWatch extends JLayeredPane{
 		this.add(outerDial, new Integer(1));
 		this.add(innerDial, new Integer(2));
 		repaint();
+		elapsedTime = 0;
 
 	}
 
@@ -47,7 +49,7 @@ public class StopWatch extends JLayeredPane{
 		//Setting up action listener
 		ActionListener listener = event -> {
 			currentTime = System.currentTimeMillis();
-			elapsedTime = (currentTime - startTime) / 1000;
+			elapsedTime = offset + (currentTime - startTime) / 1000;
 			outerDial.updateHand((int)elapsedTime);
 		};
 		t = new Timer(DELAY, listener);
@@ -60,6 +62,7 @@ public class StopWatch extends JLayeredPane{
 	public void stop() {
 		// XTODO Auto-generated method stub
 		t.stop();
+		offset = elapsedTime;
 	}
 	
 	/**
@@ -71,6 +74,7 @@ public class StopWatch extends JLayeredPane{
 		t.stop();
 		outerDial.updateHand(0);
 		outerDial.updateHand(0);
+		offset = 0;
 	}
 	private static final double SEC_RATIO = 0.85;
 	private static final int DELAY = 1000;
