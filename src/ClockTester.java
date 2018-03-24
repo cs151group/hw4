@@ -38,18 +38,14 @@ public class ClockTester
 		JButton stopwatchButton = new JButton ("Stopwatch");
 		JButton stopButton = new JButton ("Stop");
 		JButton startButton = new JButton ("Start");
-<<<<<<< HEAD
-	
-=======
 		JButton resetButton = new JButton ("Reset");
 		
->>>>>>> b467856ac64219d835e2bfa34a2eb351b8affe27
 		lowNav.add(startButton);
 		lowNav.add(stopButton);
 		lowNav.add(resetButton);
 		
         stopwatchButton.addActionListener(event -> {
-			frame.getContentPane().remove(clock);
+			frame.remove(clock);
 			frame.pack();
 			frame.add(stopwatch, BorderLayout.CENTER);
 			stopwatch.repaint();
