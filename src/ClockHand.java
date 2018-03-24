@@ -24,6 +24,13 @@ public class ClockHand extends JComponent implements MoveableShape {
 	public ClockHand(int length, int centerX, int centerY,
 						float width, Color color) {
 		// TODO Auto-generated constructor stub
+		this.length = length;
+		this.centerX = centerX;
+		this.centerY = centerY;
+		this.width = width;
+		this.color = color;
+		this.setOpaque(false);
+		this.setPreferredSize(new Dimension(length * 2, length * 2));
 	}
 
 	
@@ -62,6 +69,17 @@ public class ClockHand extends JComponent implements MoveableShape {
 
 	}
 	
+	@Override
+	protected void paintComponent(Graphics g) {
+		Graphics2D g2 = (Graphics2D) g;
+		super.paintComponent(g2);
+		Line2D line = new Line2D.Double();
+		line.setLine(250, 20, 250, 250);
+		g2.setColor(Color.BLACK);
+		g2.setStroke(new BasicStroke(width));
+		g2.draw(line);
+	}
+	
 	/**
 	 * Sets the angle of the circle.
 	 * @param radians the angle of the circle
@@ -72,7 +90,7 @@ public class ClockHand extends JComponent implements MoveableShape {
 		
 	}
 
-	
+	/*
 	//I think this is how we draw, I pick 250 as the x1, x2, y2 
 	//because I the circe is 500 but I don't know if that is radius or diameter
     //@Override
@@ -83,4 +101,5 @@ public class ClockHand extends JComponent implements MoveableShape {
 	  g2.setColor(Color.BLACK);
       g2.draw(shape);
    }
+   */
 }
