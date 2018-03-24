@@ -31,30 +31,23 @@ public class ClockTester
 		frame.remove(stopwatch);
 		frame.remove(lowNav);
 		frame.add(clock, BorderLayout.CENTER);
-		clock.repaint();
 		frame.pack();
 	  });
 		
 		JButton stopwatchButton = new JButton ("Stopwatch");
 		JButton stopButton = new JButton ("Stop");
 		JButton startButton = new JButton ("Start");
-<<<<<<< HEAD
-	
-=======
 		JButton resetButton = new JButton ("Reset");
 		
->>>>>>> b467856ac64219d835e2bfa34a2eb351b8affe27
 		lowNav.add(startButton);
 		lowNav.add(stopButton);
 		lowNav.add(resetButton);
 		
         stopwatchButton.addActionListener(event -> {
-			frame.getContentPane().remove(clock);
-			frame.pack();
+			frame.remove(clock);
 			frame.add(stopwatch, BorderLayout.CENTER);
-			stopwatch.repaint();
 			frame.add(lowNav, BorderLayout.PAGE_END);
-	    
+			frame.pack();
 	  });
 
 	  stopButton.addActionListener(event -> {
