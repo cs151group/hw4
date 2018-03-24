@@ -1,6 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.time.Instant;
+import java.time.ZonedDateTime;
 import java.util.Date;
 
 public class MyClock extends JLayeredPane {
@@ -9,7 +11,7 @@ public class MyClock extends JLayeredPane {
 	private ClockHand seconds;
 	private ClockHand hours;
 	private ClockHand mins;
-	private Date d;
+	private ZonedDateTime zdt;
 	private Timer t;
 
 	public MyClock(int x, int y, int width) {
@@ -31,10 +33,13 @@ public class MyClock extends JLayeredPane {
 		//Setting up action listener
 		ActionListener listener = event -> updateHands();
 		t = new Timer(DELAY, listener);
+		
+		//Setting up from system time
+		zdt = ZonedDateTime.now();
 	}
 	
 	private void updateHands() {
-		
+		zdt = ZonedDateTime.now();
 	}
 	
 	private static final double SEC_RATIO = 0.85;
