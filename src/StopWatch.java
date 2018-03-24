@@ -1,12 +1,11 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
-import java.time.ZonedDateTime;
 
 public class StopWatch extends JLayeredPane{
 
-	private StopWatchDial outer;
-	private StopWatchDial inner;
+	private StopWatchDial outerDial;
+	private StopWatchDial innerDial;
 	private int x;
 	private int y;
 	private int width;
@@ -14,7 +13,6 @@ public class StopWatch extends JLayeredPane{
 	private long startTime;
 	private long currentTime;
 	private long elapsedTime;
-	private StopWatchDial secDial;
 
 	private static final double INNER_RATIO = 0.33;
 	private static final double INNER_Y_OFFSET_RATIO = 0.1;
@@ -23,18 +21,17 @@ public class StopWatch extends JLayeredPane{
 		this.x = x;
 		this.y = y;
 		this.width = width;
-		outer = new StopWatchDial(x, y, width);
+		outerDial = new StopWatchDial(x, y, width);
 		//TODO: figure out ratios for inner dial
 		int innerX;
 		int innerY;
-		innerX = (int)((width / 2) * 0.70);
+		innerX = (int)((width / 2) * 0.67);
 		innerY = (int)((width / 2) * 0.30);
-		inner = new StopWatchDial(innerX, innerY, width);
-
-
+		innerDial = new StopWatchDial(innerX, innerY, width / 3);
 		this.setLayout(new OverlayLayout(this));
 		this.setPreferredSize(new Dimension(width, width));
-		this.add(outer, new Integer(1));
+		this.add(outerDial, new Integer(1));
+		this.add(innerDial, new Integer(2));
 		repaint();
 
 	}
@@ -43,15 +40,15 @@ public class StopWatch extends JLayeredPane{
 	/**
 	 * Starts the stopwatch.
 	 */
-	private void start() {
-		// TODO Auto-generated method stub
+	public void start() {
+		// XTODO Auto-generated method stub
 		startTime = System.currentTimeMillis();
 
 		//Setting up action listener
 		ActionListener listener = event -> {
 			currentTime = System.currentTimeMillis();
-			elapsedTime = currentTime - startTime;
-			secDial.updateHand((int)elapsedTime);
+			elapsedTime = (currentTime - startTime) / 1000;
+			outerDial.updateHand((int)elapsedTime);
 		};
 		t = new Timer(DELAY, listener);
 		t.start();
@@ -60,16 +57,16 @@ public class StopWatch extends JLayeredPane{
 	/**
 	 * Stops the stopwatch.
 	 */
-	private void stop() {
-		// TODO Auto-generated method stub
+	public void stop() {
+		// XTODO Auto-generated method stub
 		t.stop();
 	}
 	
 	/**
 	 * Resets the stopwatch.
 	 */
-	private void reset() {
-		// TODO Auto-generated method stub
+	public void reset() {
+		// TODO Fix reset
 		t.restart();
 		t.stop();
 	}
