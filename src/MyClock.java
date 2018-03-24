@@ -46,11 +46,14 @@ public class MyClock extends JLayeredPane {
 		this.setOpaque(true);
 		this.setPreferredSize(new Dimension(width, width));
 		
+		updateHands();
+		
 		//Setting up action listener
 		ActionListener listener = event -> updateHands();
 		t = new Timer(DELAY, listener);
+		t.start();
 		
-		//Setting up from system time
+		//Setting up from system time``
 		zdt = ZonedDateTime.now();
 	}
 	
@@ -59,21 +62,21 @@ public class MyClock extends JLayeredPane {
 		zdt = ZonedDateTime.now();
 		
 		int second = zdt.getSecond();
-		double secondAngle = (double)(second / 60) * 2 * Math.PI;
+		double secondAngle = ((double)second / 60) * 2 * Math.PI;
 		seconds.setAngle(secondAngle);
 		seconds.repaint();
 		
 		int minute = zdt.getMinute();
-		double minuteAngle = (double)(minute / 60) * 2 * Math.PI;
+		double minuteAngle = ((double)minute / 60) * 2 * Math.PI;
 		mins.setAngle(minuteAngle);
 		
 		int hour = zdt.getHour();
-		double hourAngle = (double)(hour / 12) * 2 * Math.PI;
+		double hourAngle = ((double)hour / 12) * 2 * Math.PI;
 		hours.setAngle(hourAngle);
 	}
 	
 	private static final double SEC_RATIO = 0.85;
 	private static final double MINUTE_RATIO = 0.80;
 	private static final double HOUR_RATIO = 0.75;
-	private static final int DELAY = 1000;
+	private static final int DELAY = 100;
 }
