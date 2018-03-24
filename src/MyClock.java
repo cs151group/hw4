@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class MyClock extends JPanel {
+public class MyClock extends JLayeredPane {
 
 	// TODO: Should have 3 ClockHands, for hours, seconds minutes.
 	// TODO: Should have 1 ClockFace.
@@ -16,17 +16,17 @@ public class MyClock extends JPanel {
 	public MyClock(int x, int y, int width) {
 		clockface = new ClockFace(x, y, width);
 		seconds = new ClockHand(
-				(int)(width * SEC_RATIO), 
+				(int)((width / 2) * SEC_RATIO), 
 				(x + width)/2, 
 				(y + width)/2, 
-				3.0f, 
+				2.0f, 
 				Color.RED );
-
-		this.add(clockface);
-		this.add(seconds);
+		this.setLayout(new OverlayLayout(this));
+		this.add(clockface, JLayeredPane.DEFAULT_LAYER);
+		this.add(seconds, new Integer(2));
 		clockface.repaint();
 		seconds.repaint();
-		this.setOpaque(false);
+		this.setOpaque(true);
 		this.setPreferredSize(new Dimension(width, width));
 	}
 	private static final double SEC_RATIO = 0.85;

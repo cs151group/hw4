@@ -75,7 +75,7 @@ public class ClockHand extends JComponent implements MoveableShape {
 		super.paintComponent(g2);
 		Line2D line = new Line2D.Double();
 		line.setLine(centerX, centerY, centerX, centerY + -length);
-		g2.setColor(Color.BLACK);
+		g2.setColor(color);
 		g2.setStroke(new BasicStroke(width));
 		g2.draw(line);
 	}
