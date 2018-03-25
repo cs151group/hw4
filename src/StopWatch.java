@@ -4,20 +4,6 @@ import java.awt.event.ActionListener;
 
 public class StopWatch extends JLayeredPane {
 
-    private StopWatchDial outerDial;
-    private StopWatchDial innerDial;
-    private int x;
-    private int y;
-    private int width;
-    private Timer t;
-    private long startTime;
-    private long currentTime;
-    private long elapsedTime;
-    private long offset = 0;
-
-    private static final double INNER_RATIO = 0.33;
-    private static final double INNER_Y_OFFSET_RATIO = 0.1;
-
     public StopWatch(int x, int y, int width) {
         this.x = x;
         this.y = y;
@@ -35,15 +21,12 @@ public class StopWatch extends JLayeredPane {
         this.add(innerDial, new Integer(2));
         repaint();
         elapsedTime = 0;
-
     }
-
 
     /**
      * Starts the stopwatch.
      */
     public void start() {
-        // XTODO Auto-generated method stub
         startTime = System.currentTimeMillis();
 
         //Setting up action listener
@@ -61,7 +44,6 @@ public class StopWatch extends JLayeredPane {
      * Stops the stopwatch.
      */
     public void stop() {
-        // XTODO Auto-generated method stub
         t.stop();
         offset = elapsedTime;
     }
@@ -70,7 +52,6 @@ public class StopWatch extends JLayeredPane {
      * Resets the stopwatch.
      */
     public void reset() {
-        // TODO Fix reset
         t.restart();
         t.stop();
         outerDial.updateHand(0);
@@ -78,6 +59,18 @@ public class StopWatch extends JLayeredPane {
         offset = 0;
     }
 
-    private static final double SEC_RATIO = 0.85;
+    //private static final double SEC_RATIO = 0.85;
     private static final int DELAY = 1000;
+    private StopWatchDial outerDial;
+    private StopWatchDial innerDial;
+    private int x;
+    private int y;
+    private int width;
+    private Timer t;
+    private long startTime;
+    private long currentTime;
+    private long elapsedTime;
+    private long offset = 0;
+    //private static final double INNER_RATIO = 0.33;
+    //private static final double INNER_Y_OFFSET_RATIO = 0.1;
 }

@@ -15,8 +15,6 @@ public class ClockFace extends JPanel {
      * @param y     the top of the bounding rectangle
      * @param width the width of the bounding rectangle
      */
-
-
     public ClockFace(int x, int y, int width) {
         this.x = x;
         this.y = y;
@@ -27,8 +25,6 @@ public class ClockFace extends JPanel {
         for (int i = 1; i <= 12; i++) {
             numArr[i - 1] = i;
         }
-
-
     }
 
     public void setNumArr(int... numArr) {
@@ -116,7 +112,6 @@ public class ClockFace extends JPanel {
             int ty = (int) (-Math.sin(angleFrom3) * (r - longTickLen - charHeight));
 
             g2.drawString(numStr, (int) cX + tx, (int) cY + ty);
-
         }
     }
 

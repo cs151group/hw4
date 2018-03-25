@@ -2,18 +2,13 @@ import java.awt.*;  //Mocha for Micah
 import javax.swing.*;
 
 /**
-   This program implements an animation that moves
-   a car shape.
+   This program implements an analog clock and stopwatch.
 */
 public class ClockTester {
     public static void main(String[] args) {
         JFrame frame = new JFrame();
-        //TODO: Modify ClockTester to work with MyClock and Stopwatch.
-
 
         MyClock clock = new MyClock(0, 0, CLOCK_RADIUS);
-        //NO need to call ClockFace from here
-        //ClockFace face = new ClockFace(0, 0, CLOCK_RADIUS);
 
         StopWatch watch = new StopWatch(0, 0, CLOCK_RADIUS);
 
@@ -61,7 +56,6 @@ public class ClockTester {
         topNav.add(stopwatchButton);
 
         frame.add(topNav, BorderLayout.NORTH);
-        //   clock.repaint();
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
