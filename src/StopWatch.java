@@ -5,9 +5,6 @@ import java.awt.event.ActionListener;
 public class StopWatch extends JLayeredPane {
 
     public StopWatch(int x, int y, int width) {
-        this.x = x;
-        this.y = y;
-        this.width = width;
         outerDial = new StopWatchDial(x, y, width);
         //TODO: figure out ratios for inner dial
         int innerX;
@@ -64,9 +61,6 @@ public class StopWatch extends JLayeredPane {
     private static final int DELAY = 1000;
     private StopWatchDial outerDial;
     private StopWatchDial innerDial;
-    private int x;
-    private int y;
-    private int width;
     private Timer t;
     private long startTime;
     private long currentTime;
