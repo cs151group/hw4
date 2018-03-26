@@ -56,6 +56,7 @@ public class StopWatch extends JLayeredPane {
         t.stop();
         outerDial.updateHand(0);
         innerDial.updateHand(0);
+		elapsedTime = 0;
         offset = 0;
     }
 
