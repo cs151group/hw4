@@ -6,7 +6,6 @@ public class StopWatch extends JLayeredPane {
 
     public StopWatch(int x, int y, int width) {
         outerDial = new StopWatchDial(x, y, width);
-        //TODO: figure out ratios for inner dial
         int innerX;
         int innerY;
         innerX = (int) ((width / 2) * 0.56);
@@ -18,13 +17,7 @@ public class StopWatch extends JLayeredPane {
         this.add(innerDial, new Integer(2));
         repaint();
         elapsedTime = 0;
-    }
-
-    /**
-     * Starts the stopwatch.
-     */
-    public void start() {
-        startTime = System.currentTimeMillis();
+        isRunning = false;
 
         //Setting up action listener
         ActionListener listener = event -> {
@@ -34,7 +27,17 @@ public class StopWatch extends JLayeredPane {
             innerDial.updateHand((int) elapsedTime / 60);
         };
         t = new Timer(DELAY, listener);
-        t.start();
+    }
+
+    /**
+     * Starts the stopwatch.
+     */
+    public void start() {
+        if (!isRunning) {
+            startTime = System.currentTimeMillis();
+            t.start();
+        }
+        isRunning = true;
     }
 
     /**
@@ -43,6 +46,7 @@ public class StopWatch extends JLayeredPane {
     public void stop() {
         t.stop();
         offset = elapsedTime;
+        isRunning = false;
     }
 
     /**
@@ -53,8 +57,9 @@ public class StopWatch extends JLayeredPane {
         t.stop();
         outerDial.updateHand(0);
         innerDial.updateHand(0);
-		elapsedTime = 0;
+        elapsedTime = 0;
         offset = 0;
+        isRunning = false;
     }
 
     //private static final double SEC_RATIO = 0.85;
@@ -66,6 +71,7 @@ public class StopWatch extends JLayeredPane {
     private long currentTime;
     private long elapsedTime;
     private long offset = 0;
+    private boolean isRunning;
     //private static final double INNER_RATIO = 0.33;
     //private static final double INNER_Y_OFFSET_RATIO = 0.1;
 }
