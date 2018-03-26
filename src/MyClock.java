@@ -1,9 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
-import java.time.Instant;
 import java.time.ZonedDateTime;
-import java.util.Date;
 
 public class MyClock extends JLayeredPane {
 
