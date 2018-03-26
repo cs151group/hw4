@@ -17,6 +17,7 @@ public class StopWatch extends JLayeredPane {
         this.add(innerDial, new Integer(2));
         repaint();
         elapsedTime = 0;
+		offset = 0;
         isRunning = false;
 
         //Setting up action listener
@@ -69,6 +70,6 @@ public class StopWatch extends JLayeredPane {
     private long startTime;
     private long currentTime;
     private long elapsedTime;
-    private long offset = 0;
+    private long offset;
     private boolean isRunning;
 }
