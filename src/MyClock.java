@@ -51,7 +51,7 @@ public class MyClock extends JLayeredPane {
 		t = new Timer(DELAY, listener);
 		t.start();
 		
-		//Setting up from system time``
+		//Setting up from system time
 		zdt = ZonedDateTime.now();
 	}
 	

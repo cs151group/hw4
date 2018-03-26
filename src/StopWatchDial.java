@@ -5,7 +5,6 @@ public class StopWatchDial extends JLayeredPane {
     private ClockFace face;
     private ClockHand hand;
 
-
     private static final double HAND_LENGTH = 0.8;
     // length of hand relative to radius
 
@@ -20,7 +19,6 @@ public class StopWatchDial extends JLayeredPane {
         this.setPreferredSize(new Dimension(width, width));
         face.setNumArr(5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60);
         repaint();
-
     }
 
     public void updateHand(int position) {

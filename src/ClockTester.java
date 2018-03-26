@@ -1,4 +1,4 @@
-import java.awt.*;  //Mocha for Micah
+import java.awt.*;
 import javax.swing.*;
 
 /**
@@ -57,5 +57,4 @@ public class ClockTester {
     }
 
     private static final int CLOCK_RADIUS = 500;
-
 }

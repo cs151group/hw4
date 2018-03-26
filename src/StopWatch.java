@@ -62,7 +62,6 @@ public class StopWatch extends JLayeredPane {
         isRunning = false;
     }
 
-    //private static final double SEC_RATIO = 0.85;
     private static final int DELAY = 1000;
     private StopWatchDial outerDial;
     private StopWatchDial innerDial;
@@ -72,6 +71,4 @@ public class StopWatch extends JLayeredPane {
     private long elapsedTime;
     private long offset = 0;
     private boolean isRunning;
-    //private static final double INNER_RATIO = 0.33;
-    //private static final double INNER_Y_OFFSET_RATIO = 0.1;
 }
