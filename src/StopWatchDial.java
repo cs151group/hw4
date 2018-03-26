@@ -4,18 +4,12 @@ import java.awt.*;
 public class StopWatchDial extends JLayeredPane {
     private ClockFace face;
     private ClockHand hand;
-    private int x;
-    private int y;
-    private int width;
 
 
     private static final double HAND_LENGTH = 0.8;
     // length of hand relative to radius
 
     public StopWatchDial(int x, int y, int width) {
-        this.x = x;
-        this.y = y;
-        this.width = width;
         this.setLayout(new OverlayLayout(this));
         face = new ClockFace(x, y, width);
         int cX = x + width / 2;

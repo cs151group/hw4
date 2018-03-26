@@ -10,7 +10,6 @@ public class ClockHand extends JComponent implements MoveableShape {
 	private int centerY;
 	private float width;
 	private Color color;
-	private float angle;
 	private double endPointX;
 	private double endPointY;
 
